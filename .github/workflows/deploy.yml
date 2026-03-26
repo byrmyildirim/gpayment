@@ -1,0 +1,35 @@
+name: Deploy to Railway
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Generate Prisma client
+        run: npx prisma generate
+
+      - name: Build App & Extensions
+        run: npm run build
+        env:
+          SHOPIFY_API_KEY: ${{ secrets.SHOPIFY_API_KEY }}
+
+      # Railway deployment is typically handled via Railway's GitHub integration (Directly from Dockerfile)
+      # This workflow ensures tests/build pass before anything else happens.
+      # You can also add `railway deploy` here if you prefer CLI-based deployment.

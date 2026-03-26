@@ -1,0 +1,29 @@
+# shopify.extension.toml
+name = "Payment Based Discount"
+api_version = "2026-01"
+handle = "payment-based-discount"
+type = "function"
+
+[[extensions]]
+handle = "payment-based-discount"
+name = "Payment Based Discount"
+description = "Applies a discount when Havale/EFT is selected."
+type = "function"
+
+[[extensions.targeting]]
+target = "purchase.order-discount.run"
+input_query = "src/run.graphql"
+export = "run"
+
+# Metafield access is required for dynamic settings
+[[extensions.metafields]]
+namespace = "$app:config"
+key = "discount_rate"
+
+[build]
+command = "npm run build"
+path = "dist/function.wasm"
+
+[ui.paths]
+create = "/"
+details = "/"

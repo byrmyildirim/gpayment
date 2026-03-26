@@ -1,0 +1,20 @@
+query RunInput {
+  cart {
+    # Ödeme yöntemini sepet niteliklerinde (cart attribute) arıyoruz.
+    # Checkout UI extension veya JS ile 'payment_method' niteliği doldurulmalıdır.
+    attribute(key: "payment_method") {
+      value
+    }
+    cost {
+      subtotalAmount {
+        amount
+      }
+    }
+  }
+  # Dinamik indirim oranı için metafield verisi
+  discountNode {
+    metafield(namespace: "$app:config", key: "discount_rate") {
+      value
+    }
+  }
+}
