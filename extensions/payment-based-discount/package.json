@@ -4,14 +4,13 @@
   "version": "1.0.0",
   "license": "MIT",
   "scripts": {
-    "build": "npx shopify-app-js-function-build --src=src/run.js --dest=dist/index.wasm",
+    "build": "npx shopify-app-js-function build --src=src/run.js --dest=dist/index.wasm",
     "test": "shopify-app-js-function test"
   },
   "dependencies": {
-    "@shopify/shopify_function": "2.0.1"
+    "@shopify/shopify_function": "2.1.0"
   },
   "devDependencies": {
-    "shopify-app-js-function": "0.3.0",
     "@shopify/api-codegen-preset": "^1.1.1"
   }
 }

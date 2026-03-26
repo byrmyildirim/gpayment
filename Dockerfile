@@ -10,17 +10,15 @@ WORKDIR /app
 ENV NODE_ENV=production
 ENV PORT=3000
 
-# Copy package files for dependency installation
-COPY package.json package-lock.json* ./
+# Copy package files for dependency installation (Root + Extension)
+COPY package*.json ./
+COPY extensions/payment-based-discount/package*.json ./extensions/payment-based-discount/
 
-# Install all dependencies
+# Install all dependencies (Root handles workspaces)
 RUN npm install
 
 # Copy the rest of the application code
 COPY . .
-
-# Install extension dependencies (IMPORTANT to avoid build errors)
-RUN cd extensions/payment-based-discount && npm install
 
 # Generate Prisma client
 RUN npx prisma generate
