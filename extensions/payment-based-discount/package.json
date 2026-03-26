@@ -4,7 +4,7 @@
   "version": "1.0.0",
   "license": "MIT",
   "scripts": {
-    "build": "shopify-app-js-function build",
+    "build": "npx shopify-app-js-function-build --src=src/run.js --dest=dist/index.wasm",
     "test": "shopify-app-js-function test"
   },
   "dependencies": {

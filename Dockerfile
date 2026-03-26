@@ -13,14 +13,19 @@ ENV PORT=3000
 # Copy package files for dependency installation
 COPY package.json package-lock.json* ./
 
-# Install all dependencies (including devDependencies for build step)
+# Install all dependencies
 RUN npm install
 
 # Copy the rest of the application code
 COPY . .
 
-# Generate Prisma client and build the app (Remix + Functions)
+# Install extension dependencies (IMPORTANT to avoid build errors)
+RUN cd extensions/payment-based-discount && npm install
+
+# Generate Prisma client
 RUN npx prisma generate
+
+# Final build (Remix + Functions)
 RUN npm run build
 
 # Expose port (Railway will use PORT env var)
