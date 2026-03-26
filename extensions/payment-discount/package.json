@@ -1,0 +1,16 @@
+{
+  "name": "payment-based-discount",
+  "private": true,
+  "version": "1.0.0",
+  "license": "MIT",
+  "scripts": {
+    "build": "shopify-app-js-function build",
+    "test": "shopify-app-js-function test"
+  },
+  "dependencies": {
+    "@shopify/shopify-function": "^0.6.1"
+  },
+  "devDependencies": {
+    "shopify-app-js-function": "^0.2.1"
+  }
+}

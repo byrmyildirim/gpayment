@@ -2,6 +2,7 @@
 name = "Payment Based Discount"
 api_version = "2026-01"
 handle = "payment-based-discount"
+uid = "ac84e3c2-2a4b-9f60-e12d-9b6472d3be7584316be1"
 type = "function"
 
 [[extensions]]
