@@ -8,9 +8,9 @@
     "test": "shopify-app-js-function test"
   },
   "dependencies": {
-    "@shopify/shopify-function": "^0.6.1"
+    "@shopify/shopify_function": "^2.0.1"
   },
   "devDependencies": {
-    "shopify-app-js-function": "^0.2.1"
+    "@shopify/api-codegen-preset": "^1.1.1"
   }
 }
