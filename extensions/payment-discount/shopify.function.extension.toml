@@ -23,7 +23,7 @@ key = "discount_rate"
 
 [build]
 command = "npm run build"
-path = "dist/function.wasm"
+path = "dist/index.wasm"
 
 [ui.paths]
 create = "/"
