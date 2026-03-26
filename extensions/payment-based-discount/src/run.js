@@ -1,5 +1,6 @@
 // extensions/payment-discount/src/run.js
 
+// payment-based-discount function v1.0.1
 export function run(input) {
   // Sepet alt toplamı ve aktif ödeme yöntemi belirleniyor
   // 'payment_method' verisi cart attribute (sepet niteliği) olarak beklenmektedir.
