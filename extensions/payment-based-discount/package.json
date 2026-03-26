@@ -1,16 +1,20 @@
 {
   "name": "payment-based-discount",
-  "private": true,
   "version": "1.0.0",
-  "license": "MIT",
+  "private": true,
+  "license": "UNLICENSED",
+  "type": "module",
   "scripts": {
-    "build": "npx shopify-app-js-function build --src=src/run.js --dest=dist/index.wasm",
-    "test": "shopify-app-js-function test"
+    "shopify": "npm exec -- shopify",
+    "typegen": "npm exec -- shopify app function typegen",
+    "build": "npm exec -- shopify app function build",
+    "test": "vitest"
   },
   "dependencies": {
-    "@shopify/shopify_function": "2.0.1"
+    "@shopify/shopify_function": "^2.0.1"
   },
   "devDependencies": {
-    "@shopify/api-codegen-preset": "^1.1.1"
+    "@shopify/shopify-function-test-helpers": "^1.0.0",
+    "vitest": "^3.2.4"
   }
 }
